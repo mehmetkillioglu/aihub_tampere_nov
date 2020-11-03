@@ -43,6 +43,7 @@ Click Navigation2 Goal (1.) and click and drag at a desired location within the 
 
 # Extras
 
+## Changing configuration of Navigation2
 You can clone this repository into a new workspace and have the ability to change the configuration of Navigation2 Simulation. This repository contains nav2_bringup package, which can be used to run simulation.
 
 Run the following commands in the home directory. This will create a new workspace folder and src subdirectory, then clone this repository.
@@ -100,7 +101,9 @@ controller_server:
 
 But keep in mind that some parameters might effect other functionalities, for instance FollowPath xy_goal_tolerance values which is used by RotateToGoal. So before making changes, make sure to follow configuration guide released by Navigation2.  
 
+## Visualization Tools
 
+The ROS2 Foxy version has a graphical interface which enables users to plot various topics, visualize nodes and relations.
 
 # Troubleshooting
 
