@@ -20,7 +20,7 @@ To run the simulation environment Gazebo, run following commands after sourcing.
 ros2 launch nav2_bringup tb3_simulaton_launch.py
 ```
 
-Tip: ROS2 has an autocomplete feature. After you enter some letters, you can use tab or double tab to complete the command.
+_Tip: ROS2 has an autocomplete feature. After you enter some letters, you can use tab or double tab to complete the command._
 
 ## Step 3 - Give a 2D Pose Estimate
 After Gazebo and RVIZ are initialized, you need to give an 2D Pose Estimate of the robot. This is required because in the beginning, the SLAM algorithm does not actually know where to look. By giving the 2D Estimate Pose, the SLAM algorithm, in this case just matching so ACML, matches the laser scan with the existing map file. Afterwards, you can see the location of the Robot on RVIZ, and continue giving Navigation2 Goal.
@@ -37,6 +37,22 @@ By using the toolbox of RVIZ, you can give a command to Navigation2 Stack. This 
 Click Navigation2 Goal (1.) and click and drag at a desired location within the map. You will see that the Navigation2 stack processes that goal, creates a path to goal and starts following. Meantime, in the command line, you can see the logs of Navigation2 stack, how the controller servers and navigators are processing.
 
 [![N|Solid](./img/navigation_goal.png)]
+
+
+# Extras
+
+You can clone this repository into a new workspace and have the ability to change the configuration of Navigation2 Simulation. This repository contains nav2_bringup package, which can be used to run simulation.
+
+Run the following commands in the home directory. This will create a new workspace folder and src subdirectory, then clone this repository.
+```sh
+mkdir -p my_ws/src
+cd my_ws/src
+git clone https://github.com/mehmetkillioglu/aihub_tampere_nov.git
+cd ~/my_ws
+```
+
+
+
 
 # Troubleshooting
 
