@@ -27,7 +27,7 @@ After Gazebo and RVIZ are initialized, you need to give an 2D Pose Estimate of t
 
 Click 2D Pose Estimate (1.), and click and drag at the 2. area to have a similar green arrow. You do not need to be exactly specific for this step, just a coarse estimation is enough. Even if the localization is bad at the start, by the time that robot is moving around, you can see that the localization gets better.
 
-[! [N|Solid](./img/pose_estimate.png)]
+[![N|Solid](./img/pose_estimate.png)]
 
 For this environment, the spawn position of Turtlebot is defined to be at that corner. If you are not sure about the location, you can check the Gazebo window and you will see the robot's position and pose visually. 
 
@@ -36,7 +36,7 @@ By using the toolbox of RVIZ, you can give a command to Navigation2 Stack. This 
 
 Click Navigation2 Goal (1.) and click and drag at a desired location within the map. You will see that the Navigation2 stack processes that goal, creates a path to goal and starts following. Meantime, in the command line, you can see the logs of Navigation2 stack, how the controller servers and navigators are processing.
 
-[! [N|Solid](./img/navigation_goal.png)]
+[![N|Solid](./img/navigation_goal.png)]
 
 # Troubleshooting
 
@@ -47,6 +47,6 @@ export SVGA_VGPU10=0
 ```
 
 Also check the if the settings are as followed; 
-[! [N|Solid](./img/gpu_settings.png)]
+[![N|Solid](./img/gpu_settings.png)]
 
 You can disable "Accelerate 3D Graphics" if your computer does not have a compatible GPU. 
