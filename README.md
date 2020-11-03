@@ -83,7 +83,7 @@ gedit nav2_params.yaml
 
 ```
 
-When the text editor is open, you can see all the parameters that Navigation2 modules and servers are using. For more detailed explanation, please refer to [Navigation2 Configuration Guide(https://navigation.ros.org/configuration/index.html)].
+When the text editor is open, you can see all the parameters that Navigation2 modules and servers are using. For more detailed explanation, please refer to [Navigation2 Configuration Guide](https://navigation.ros.org/configuration/index.html).
 
 One of the simple parameter that you can change and observe the output is the goal checker parameters. This xy_goal_tolerance and yaw_goal_tolerance is basically controller server's condition to determine if the goal has been reached. If you increase those values, the robot will stop once the condition is satisfied. Lower values will end up being more precise at the goal.
 
