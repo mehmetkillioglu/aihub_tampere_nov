@@ -117,3 +117,7 @@ Also check the if the settings are as followed;
 ![N|Solid](./img/gpu_settings.png)
 
 You can disable "Accelerate 3D Graphics" if your computer does not have a compatible GPU. 
+
+## You get this screen when importing the virtual machine to VMWare
+Just click "Retry". VMWare will then optimize settings and the import should succeed then.
+![N|Solid](./img/vmware_import.png)
