@@ -18,7 +18,7 @@ The Navigation2 Stack has a package called 'nav2_bringup'. In this package, ther
 
 To run the simulation environment Gazebo, run following commands after sourcing.
 ```sh
-ros2 launch nav2_bringup tb3_simulaton_launch.py
+ros2 launch nav2_bringup tb3_simulation_launch.py
 
 ```
 
@@ -71,7 +71,7 @@ source ~/my_ws/install/setup.bash
 Now that we have the same package names as the original nav2_bringup, this workspace will be the active one. Meaning that the launch command will use this codes and parameters. You can launch the simulation again with the same command.
 
 ```sh
-ros2 launch nav2_bringup tb3_simulaton_launch.py
+ros2 launch nav2_bringup tb3_simulation_launch.py
 
 ```
 
