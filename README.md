@@ -75,7 +75,6 @@ You should be able to visualize the local region around the turtlebot on RVIZ as
 Open a new terminal and enter the following command to teleoperate in the environment. 
 ```sh
 export TURTLEBOT3_MODEL=waffle
-sh
 ros2 run turtlebot3_teleop teleop_keyboard 
 ```
 You should be able to see the turtlebot gradually mapping its environment as it makes its way. 
