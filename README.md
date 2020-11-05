@@ -5,6 +5,14 @@ For the Troubleshooting section, see the end of this document.
 
 For virtual machine instructions, see [installation guide](./INSTALLATION.md)
 
+The password of virtual machine is 
+
+```
+ros
+```
+
+if you need to run any sudo commands.
+
 ## Hands-on Gazebo Turtlebot Simulations
 In ROS2, you will need to source the required workspaces. The given virtual machine will already have Ubuntu 20.04, ROS2 Foxy, Navigation2 stack installed. 
 ## Step 1 - Source: 
