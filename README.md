@@ -1,7 +1,9 @@
 # AIHub Tampere Workshop
 In this workshop, you will get to know the basics of ROS2 and Simulation Environment Gazebo.
 
-For the basics of Linux commands and Troubleshooting, see the end of this document.
+For the Troubleshooting section, see the end of this document.
+
+For virtual machine instructions, see [installation guide](./INSTALLATION.md)
 
 ## Hands-on Gazebo Turtlebot Simulations
 In ROS2, you will need to source the required workspaces. The given virtual machine will already have Ubuntu 20.04, ROS2 Foxy, Navigation2 stack installed. 
