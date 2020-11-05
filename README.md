@@ -58,7 +58,7 @@ It is possible to perform most navigation tasks given a predefined map, however 
 
 Run the simulation environment as before using the following command
 ```sh
-ros2 launch nav2_bringup tb3_simulation_launch.py
+ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
 
 ```
 Open a new terminal and set the turtlebot_model as shown below
@@ -80,6 +80,12 @@ ros2 run turtlebot3_teleop teleop_keyboard
 You should be able to see the turtlebot gradually mapping its environment as it makes its way. 
 ![N|Solid](./img/mapping_and_navigation.PNG)
 
+To save the current map in a directory called maps
+```sh
+mkdir maps
+cd maps
+ros2 service call /map_saver/save_map nav2_msgs/srv/SaveMap
+```
 
 ## Changing configuration of Navigation2
 You can clone this repository into a new workspace and have the ability to change the configuration of Navigation2 Simulation. This repository contains nav2_bringup package, which can be used to run simulation.
