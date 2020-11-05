@@ -35,7 +35,7 @@ ros2 launch nav2_bringup tb3_simulation_launch.py
 _Tip: ROS2 has an autocomplete feature. After you enter some letters, you can use tab or double tab to complete the command._
 
 ## Step 3 - Give a 2D Pose Estimate
-After Gazebo and RVIZ are initialized, you need to give an 2D Pose Estimate of the robot. This is required because in the beginning, the SLAM algorithm does not actually know where to look. By giving the 2D Estimate Pose, the SLAM algorithm, in this case just matching so ACML, matches the laser scan with the existing map file. Afterwards, you can see the location of the Robot on RVIZ, and continue giving Navigation2 Goal.
+After Gazebo and RVIZ are initialized, you need to give an 2D Pose Estimate of the robot. This is required because in the beginning, the localization algorithm does not actually know where to look. By giving the 2D Estimate Pose, the localization algorithm, in this case just matching so ACML (a probabilistic localization system for a robot moving in 2D), matches the laser scan with the existing map file. Afterwards, you can see the location of the Robot on RVIZ, and continue giving Navigation2 Goal.
 
 Click 2D Pose Estimate (1.), and click and drag at the 2. area to have a similar green arrow. You do not need to be exactly specific for this step, just a coarse estimation is enough. Even if the localization is bad at the start, by the time that robot is moving around, you can see that the localization gets better.
 
@@ -52,6 +52,32 @@ Click Navigation2 Goal (1.) and click and drag at a desired location within the 
 
 
 # Extras
+
+## Navigating without a known map (SLAM)
+It is possible to perform most navigation tasks given a predefined map, however if the turtlebot is placed in an unknown environment it needs to be able to create a live map of its surroundings. To do this you must use a SLAM algorithm. In this tutorial we will use the slam-toolbox 
+
+Run the simulation environment as before using the following command
+```sh
+ros2 launch nav2_bringup tb3_simulation_launch.py
+
+```
+Set the turtlebot_model as shown below
+```sh
+export TURTLEBOT3_MODEL=waffle
+```
+Launch the SLAM algorithm
+```sh
+ros2 launch slam_toolbox online_async_launch.py
+```
+You should be able to visualize the local region around the turtlebot on RVIZ as shown below. 
+![N|Solid](./img/SLAM_Start.PNG)
+
+Once a Navigation2 Goal is set by clicking Navigation2 Goal you should be able to see the turtlebot gradually mapping its environment as it makes its way to the set goal.
+
+![N|Solid](./img/mapping_and_navigation.PNG)
+
+_Tip: Set the goal within the already mapped region to obtain optimal results and expand the map gradually. You can also play with this a little and see what happens when the goal is further away. _
+
 
 ## Changing configuration of Navigation2
 You can clone this repository into a new workspace and have the ability to change the configuration of Navigation2 Simulation. This repository contains nav2_bringup package, which can be used to run simulation.
@@ -110,6 +136,7 @@ controller_server:
 ```
 
 But keep in mind that some parameters might effect other functionalities, for instance FollowPath xy_goal_tolerance values which is used by RotateToGoal. So before making changes, make sure to follow configuration guide released by Navigation2.  
+
 
 ## Visualization Tools
 
