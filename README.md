@@ -61,22 +61,25 @@ Run the simulation environment as before using the following command
 ros2 launch nav2_bringup tb3_simulation_launch.py
 
 ```
-Set the turtlebot_model as shown below
+Open a new terminal and set the turtlebot_model as shown below
 ```sh
 export TURTLEBOT3_MODEL=waffle
 ```
-Launch the SLAM algorithm
+On the same terminal launch the SLAM algorithm
 ```sh
 ros2 launch slam_toolbox online_async_launch.py
 ```
 You should be able to visualize the local region around the turtlebot on RVIZ as shown below. 
 ![N|Solid](./img/SLAM_Start.PNG)
 
-Once a Navigation2 Goal is set by clicking Navigation2 Goal you should be able to see the turtlebot gradually mapping its environment as it makes its way to the set goal.
-
+Open a new terminal and enter the following command to teleoperate in the environment. 
+```sh
+export TURTLEBOT3_MODEL=waffle
+sh
+ros2 run turtlebot3_teleop teleop_keyboard 
+```
+You should be able to see the turtlebot gradually mapping its environment as it makes its way. 
 ![N|Solid](./img/mapping_and_navigation.PNG)
-
-_Tip: Set the goal within the already mapped region to obtain optimal results and expand the map gradually. You can also play with this a little and see what happens when the goal is further away. _
 
 
 ## Changing configuration of Navigation2
