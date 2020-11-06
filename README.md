@@ -56,26 +56,17 @@ Click Navigation2 Goal (1.) and click and drag at a desired location within the 
 ## Navigating without a known map (SLAM)
 It is possible to perform most navigation tasks given a predefined map, however if the turtlebot is placed in an unknown environment it needs to be able to create a live map of its surroundings. To do this you must use a SLAM algorithm. In this tutorial we will use the slam-toolbox 
 
-Run the simulation environment as before using the following command
+Run the simulation environment as before using the following command, this time set slam argument to true (default is set to false)
 ```sh
 ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
 
 ```
-Open a new terminal and set the turtlebot_model as shown below
-```sh
-export TURTLEBOT3_MODEL=waffle
-```
-On the same terminal launch the SLAM algorithm
-```sh
-ros2 launch slam_toolbox online_async_launch.py
-```
 You should be able to visualize the local region around the turtlebot on RVIZ as shown below. 
 ![N|Solid](./img/SLAM_Start.PNG)
 
-Open a new terminal and enter the following command to teleoperate in the environment. 
+Open a new terminal and set the turtlebot_model as shown below
 ```sh
-export TURTLEBOT3_MODEL=waffle
-ros2 run turtlebot3_teleop teleop_keyboard 
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
 You should be able to see the turtlebot gradually mapping its environment as it makes its way. 
 ![N|Solid](./img/mapping_and_navigation.PNG)
