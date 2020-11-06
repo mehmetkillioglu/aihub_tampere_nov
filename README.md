@@ -59,6 +59,7 @@ It is possible to perform most navigation tasks given a predefined map, however 
 Run the simulation environment as before using the following command, this time set slam argument to true (default is set to false)
 ```sh
 source /opt/ros/foxy/setup.bash
+source ~/turtlebot3_ws/install/setup.bash
 ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
 
 ```
