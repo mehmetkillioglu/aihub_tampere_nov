@@ -58,23 +58,24 @@ It is possible to perform most navigation tasks given a predefined map, however 
 
 Run the simulation environment as before using the following command, this time set slam argument to true (default is set to false)
 ```sh
+source /opt/ros/foxy/setup.bash
 ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
 
 ```
 You should be able to visualize the local region around the turtlebot on RVIZ as shown below. 
 ![N|Solid](./img/SLAM_Start.PNG)
 
-Open a new terminal and set the turtlebot_model as shown below
+Open a new terminal and run the following commands for teleoperation
 ```sh
+source /opt/ros/foxy/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
 You should be able to see the turtlebot gradually mapping its environment as it makes its way. 
 ![N|Solid](./img/mapping_and_navigation.PNG)
 
-To save the current map in a directory called maps
+To save the current map in the home directory
 ```sh
-mkdir maps
-cd maps
+source /opt/ros/foxy/setup.bash
 ros2 service call /map_saver/save_map nav2_msgs/srv/SaveMap
 ```
 
